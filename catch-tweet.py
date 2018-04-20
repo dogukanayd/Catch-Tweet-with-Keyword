@@ -14,14 +14,14 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-def main(KEY_WORD, day):
+def main(KEY_WORD, day, lang):
     CONSUMER_KEY = 'xxx'
     CONSUMER_SECRET = 'xxx'
     KEY = 'xxx'
     SECRET = 'xxx'
     date = datetime.datetime.now()
     for i in range(day):
-        url = 'https://api.twitter.com/1.1/search/tweets.json?q=' + KEY_WORD + '&lang=tr&count=100&until=' + str(date.strftime("%Y-%m-%d")) 
+        url = 'https://api.twitter.com/1.1/search/tweets.json?q=' + KEY_WORD + '&lang=' + lang + '&count=100&until=' + str(date.strftime("%Y-%m-%d")) 
         respond = oauth_req(url, KEY, SECRET, CONSUMER_KEY, CONSUMER_SECRET)
         respond_json = json.loads(respond)
         try:
@@ -74,4 +74,4 @@ def test_api(respond_json):
         print key["user"]["screen_name"]
         print key["entities"]["urls"]["expanded_url"]
 
-main('btc', 7)
+main('btc', 7, 'tr')

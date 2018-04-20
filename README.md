@@ -28,9 +28,11 @@ pip install datetime
 
 ## Running
 
-the first parameter is the word you want to search for
+The first parameter is the word you want to search for
 
-the second parameter is how many days you want to go back
+The second parameter is how many days you want to go back
+
+The third parameter is language choice for your keyword: Restricts tweets to the given language, given by an ISO 639-1 code. Language detection is best-effort.
 
 Example:
 
