@@ -16,14 +16,9 @@ Pip
 If you do not have them
 
 ```
-pip install oauth2
-pip install json
-pip install time
-pip install sys
-pip install csv
-pip install os
-pip install termcolor
-pip install datetime
+git clone https://github.com/dogukanayd/Catch-Tweet-with-Keyword.git
+cd Catch-Tweet-with-Keyword
+pip install -r requirements.txt
 ```
 
 ## Running
