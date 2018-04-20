@@ -37,7 +37,7 @@ The third parameter is language choice for your keyword: Restricts tweets to the
 Example:
 
 ```
-main('btc', 7)
+main('btc', 7, 'tr')
 ```
 
 Go to the folder where the project is located from the terminal
