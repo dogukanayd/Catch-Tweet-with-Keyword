@@ -13,7 +13,6 @@ Pip
 
 ### Installing
 
-If you do not have them
 
 ```
 git clone https://github.com/dogukanayd/Catch-Tweet-with-Keyword.git
