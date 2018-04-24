@@ -26,6 +26,7 @@ def main(KEY_WORD, day, lang):
         respond_json = json.loads(respond)
         try:
             while respond_json["search_metadata"]["next_results"]:
+                time.sleep(2)
                 url = 'https://api.twitter.com/1.1/search/tweets.json' + respond_json["search_metadata"]["next_results"]
                 print colored("SUCCESS! ", "green") + colored("for selected date: ", "yellow") + colored("{0}".format(date), "green")
                 respond = oauth_req(url, KEY, SECRET, CONSUMER_KEY, CONSUMER_SECRET)
@@ -49,7 +50,7 @@ def oauth_req(url, key, secret, CONSUMER_KEY, CONSUMER_SECRET, http_method="GET"
 
 
 def write_to_csv(data, KEY_WORD):
-    file_exists = os.path.isfile('data.csv')
+    file_exists = os.path.isfile('outputs/csv/' + KEY_WORD + '.csv')
     filename = 'outputs/csv/' + KEY_WORD + '.csv'
     with open(filename, 'ab') as csvfile:
         fieldnames = ['keyword', 'date', 'name' ,'tweets', 'url']
@@ -74,4 +75,4 @@ def test_api(respond_json):
         print key["user"]["screen_name"]
         print key["entities"]["urls"]["expanded_url"]
 
-main('btc', 7, 'tr')
+main('migros', 7, 'tr')
