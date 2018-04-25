@@ -52,6 +52,16 @@ cd Catch-Tweet-with-Keyword
 python catch-tweet.py
 ```
 
+Keyword Analysis
+
+Go to the keyword-analysis.py than
+
+Change the inside of this array you want to search for
+
+```
+keywords = ["dump", "pump"]
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
