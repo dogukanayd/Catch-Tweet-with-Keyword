@@ -53,7 +53,7 @@ def write_to_csv(data, KEY_WORD):
     file_exists = os.path.isfile('outputs/csv/' + KEY_WORD + '.csv')
     filename = 'outputs/csv/' + KEY_WORD + '.csv'
     with open(filename, 'ab') as csvfile:
-        fieldnames = ['keyword', 'date', 'name' ,'tweets', 'url']
+        fieldnames = ['keyword', 'date', 'name' ,'tweets', 'retweetcount','favorite_count', 'link']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         if not file_exists:
             writer.writeheader()
@@ -62,7 +62,7 @@ def write_to_csv(data, KEY_WORD):
                              'date': data["statuses"][i]["created_at"] ,
                              'name': data["statuses"][i]["user"]["screen_name"],
                              'tweets': data["statuses"][i]["text"], 
-                             'url': 'test'})
+                             'retweetcount': data["statuses"][i]["retweet_count"], 'favorite_count': data["statuses"][i]["favorite_count"], 'link': get_tweet_link(data)})
 
 
 def write_to_json(data, filename):
@@ -70,9 +70,9 @@ def write_to_json(data, filename):
         json.dump(data, fp, ensure_ascii=False)
 
 
-def test_api(respond_json):
-    for key in respond_json["statuses"]:
-        print key["user"]["screen_name"]
-        print key["entities"]["urls"]["expanded_url"]
+def get_tweet_link(data):
+    for i in range(len(data["statuses"])):
+        for link in data["statuses"][i]["entities"]["urls"]:
+            return link["expanded_url"]
 
-main('migros', 7, 'tr')
+main('btc', 7, 'tr')
