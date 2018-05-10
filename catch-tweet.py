@@ -53,7 +53,7 @@ def write_to_csv(data, KEY_WORD):
     file_exists = os.path.isfile('outputs/csv/' + KEY_WORD + '.csv')
     filename = 'outputs/csv/' + KEY_WORD + '.csv'
     with open(filename, 'ab') as csvfile:
-        fieldnames = ['keyword', 'date', 'name' ,'tweets', 'retweetcount','favorite_count', 'link']
+        fieldnames = ['keyword', 'date', 'name' ,'tweets', 'retweetcount','favorite_count', 'tweet_link']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         if not file_exists:
             writer.writeheader()
@@ -62,7 +62,7 @@ def write_to_csv(data, KEY_WORD):
                              'date': data["statuses"][i]["created_at"] ,
                              'name': data["statuses"][i]["user"]["screen_name"],
                              'tweets': data["statuses"][i]["text"], 
-                             'retweetcount': data["statuses"][i]["retweet_count"], 'favorite_count': data["statuses"][i]["favorite_count"], 'link': get_tweet_link(data)})
+                             'retweetcount': data["statuses"][i]["retweet_count"], 'favorite_count': data["statuses"][i]["favorite_count"], 'tweet_link': get_tweet_link(data)})
 
 
 def write_to_json(data, filename):
