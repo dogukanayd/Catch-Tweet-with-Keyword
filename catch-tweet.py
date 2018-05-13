@@ -9,16 +9,17 @@ import os.path
 from termcolor import colored
 import datetime
 from time import gmtime, strftime
+from settings import *
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
 
 def main(KEY_WORD, day, lang):
-    CONSUMER_KEY = 'YOUR_CONSUMER_KEY'
-    CONSUMER_SECRET = 'YOUR_CONSUMER_SECRET_KEY'
-    KEY = 'YOUR_KEY'
-    SECRET = 'YOUR_SECRET_KEY'
+    CONSUMER_KEY = YOUR_CONSUMER_KEY
+    CONSUMER_SECRET = YOUR_CONSUMER_SECRET
+    KEY = YOUR_KEY
+    SECRET = YOUR_SECRET
     date = datetime.datetime.now()
     for i in range(day):
         url = 'https://api.twitter.com/1.1/search/tweets.json?q=' + KEY_WORD + '&lang=' + lang + '&count=100&until=' + str(date.strftime("%Y-%m-%d")) 
@@ -59,11 +60,13 @@ def write_to_csv(data, KEY_WORD):
             writer.writeheader()
         for i in range(len(data["statuses"])):
             writer.writerow({'keyword': KEY_WORD ,
-                             'date': data["statuses"][i]["created_at"] ,
-                             'name': data["statuses"][i]["user"]["screen_name"],
-                             'tweets': data["statuses"][i]["text"], 
-                             'status_link': "twitter.com/i/web/status/" + data["statuses"][i]["id_str"],
-                             'retweetcount': data["statuses"][i]["retweet_count"], 'favorite_count': data["statuses"][i]["favorite_count"], 'tweet_link': get_tweet_link(data)})
+                            'date': data["statuses"][i]["created_at"] ,
+                            'name': data["statuses"][i]["user"]["screen_name"],
+                            'tweets': data["statuses"][i]["text"], 
+                            'status_link': "twitter.com/i/web/status/" + data["statuses"][i]["id_str"],
+                            'retweetcount': data["statuses"][i]["retweet_count"],
+                            'favorite_count': data["statuses"][i]["favorite_count"],
+                            'tweet_link': get_tweet_link(data)})
 
 
 def write_to_json(data, filename):

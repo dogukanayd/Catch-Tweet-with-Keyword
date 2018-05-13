@@ -20,12 +20,12 @@ cd Catch-Tweet-with-Keyword
 pip install -r requirements.txt
 ```
 
-Enter your own keys into the Main function in the catch_tweet.py
+Enter your own keys into the settings.py 
 ```
-    CONSUMER_KEY = 'YOUR_CONSUMER_KEY'
-    CONSUMER_SECRET = 'YOUR_CONSUMER_SECRET_KEY'
-    KEY = 'YOUR_KEY'
-    SECRET = 'YOUR_SECRET_KEY'
+    YOUR_CONSUMER_KEY = 'YOUR_CONSUMER_KEY'
+    YOUR_CONSUMER_SECRET = 'YOUR_CONSUMER_SECRET_KEY'
+    YOUR_KEY = 'YOUR_KEY'
+    YOUR_SECRET = 'YOUR_SECRET_KEY'
 ```
 
 ## Running
@@ -61,6 +61,10 @@ Change the inside of this array you want to search for
 ```
 keywords = ["dump", "pump"]
 ```
+
+## Example of the outputs
+
+![alt text](https://i.hizliresim.com/6JgAXv.png)
 
 ## License
 
