@@ -2,6 +2,10 @@
 
 This project allows you to extract data from the API with the entered word and date using the Twitter API.
 
+## Example of the outputs
+
+![](/outputs/outputsexample.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
@@ -62,9 +66,6 @@ Change the inside of this array you want to search for
 keywords = ["dump", "pump"]
 ```
 
-## Example of the outputs
-
-![](/outputs/outputsexample.png)
 
 ## License
 
