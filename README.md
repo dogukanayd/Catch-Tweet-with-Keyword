@@ -64,7 +64,7 @@ keywords = ["dump", "pump"]
 
 ## Example of the outputs
 
-![alt text](https://i.hizliresim.com/6JgAXv.png)
+![](/outputs/outputsexample.png)
 
 ## License
 
